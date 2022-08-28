@@ -1,31 +1,47 @@
 
-let userName = prompt ("Введите своё имя") 
-let titleHTML = document.getElementById("title")
-let count = 0
+const books = [
+    {
+        title: "Гарри Поттер и философский камень",
+        authors: "Джоан Роулинг",
+        year: "1997",
+        image: "/book1.jpg"
+    },
 
-    if (userName) {
-        titleHTML.innerHTML = "Ваш список дел," + " " + userName + ":"
-    } else {
-        titleHTML.innerHTML = "Ваш список дел, анонимный пользователь"
+    {
+        title: "Гарри Поттер и тайная комната",
+        authors: "Джоан Роулинг",
+        year: "1998",
+        image: "/book2.jpg"
+    },
+
+    {
+        title: "Гарри Поттер и узник Азкабана",
+        authors: "Джоан Роулинг",
+        year: "1999",
+        image: "/book3.jpg"
+    },
+
+    {
+        title: "Гарри Поттер и кубок огня",
+        authors: "Джоан Роулинг",
+        year: "2000",
+        image: "/book4.jpg"
     }
-
-      
-function add() {
-    
-    let inputHTML = document.getElementById("addItem")
-    let listHTML = document.getElementById("list")
-    let value = inputHTML.value
-
-    count = count + 1
-
-    if (count <= 5) {
-        listHTML.innerHTML = listHTML.innerHTML + "<span> Дело № </span>" + count + ". " + value + "  " + "<br/>" + "<br/>"
-    }
-    else if (count > 5) {
-        alert ("Вы можете ввести не более 5 дел!")
-    }
+]
    
-}   
+const list2 = document.getElementById("list")
+
+books.forEach((book) => {
+    list2.innerHTML += `
+    <div class="list" id="list"> 
+        <div class="book-image">${book.image}</div>
+        <div class="book-title">${book.title}</div>
+        <div class="book-year">${book.year}</div>
+        <div class="book-author">${book.authors}</div>
+    </div>
+   `
+})
+
     
     
     

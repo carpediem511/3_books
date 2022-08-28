@@ -2,47 +2,6 @@ html {
     font-family: 'Raleway', sans-serif;
 }
 
-#title, #list {
-    font-size: 26px;
-    font-weight: 400;
-    color: darkorchid;
-    margin-bottom: 2%;
-    margin-top: 2%;
-    margin-left: 2%;
-}
-
-#list {
-    font-size: 18px;
-    padding-right: 10%;
-    width: 50%;
-    color: rgb(67, 64, 64);
-}
-
-
-
-#addItem {
-    margin-left: 2%;
-    margin-right: 2%;
+.list {
     
-}
-
-#addItem, button {
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    font-size: 16px;
-    color: darkturquoise;
-    background-color: rgba(0, 221, 255, 0.093);
-    border-color: rgb(13, 250, 171);
-    border: 1px solid;
-    outline:none;
-}
-
-#addItem:hover, button:hover {
-   background-color: rgba(227, 148, 58, 0.2);
-}
-
-span {
-    color: blueviolet;
 }
