@@ -33,12 +33,18 @@ const list2 = document.getElementById("list")
 
 books.forEach((book) => {
     list2.innerHTML += `
-    <div class="list" id="list"> 
-        <div class="book-image">${book.image}</div>
-        <div class="book-title">${book.title}</div>
-        <div class="book-year">${book.year}</div>
-        <div class="book-author">${book.authors}</div>
-    </div>
+        <div class="list"> 
+            <div class="book">
+                <div class="book-image"><img src="${book.image}" class="book-image-style"/></div>
+                <div class="book-title">${book.title}</div>
+                <div class="book-year">${book.year}</div>
+                <div class="book-author">${book.authors}</div>
+                <div class="book-buttons">
+                    <button class="book-button">Изменить</button>
+                    <button class="book-button">Удалить</button>
+                </div>
+            </div>
+        </div>
    `
 })
 
