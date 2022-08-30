@@ -33,7 +33,8 @@ html {
 
 .background-title {
     padding-top: 23%;
-    color: #6e463c;
+    color: #ff6a0093;
+    text-shadow: 1px 1px 1px rgb(255, 255, 255);
     font-weight: 500;
     font-size: 40px;
 }
@@ -45,6 +46,7 @@ html {
     color: white;
     padding-bottom: 5%;
     line-height: 1.4;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
 .background-button {
@@ -70,7 +72,8 @@ html {
     padding-bottom: 5%;
     text-align: center;
     font-size: 26px;
-    color: #a27464;
+    color: #ff6a0093;
+    text-shadow: 1px 1px 1px rgb(104, 103, 103);
 }
 
 .book {
