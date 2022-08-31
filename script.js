@@ -1,5 +1,5 @@
 
-// ввести счётчик для книг, чтобы в id записывались значения
+// ввожу счётчик для книг, чтобы в id записывались значения
 
 let booksCounter = 1;
 
@@ -47,7 +47,7 @@ function renderBooks() { // ввести функцию - визуализиро
   list2.innerHTML = "" // пока в контейнере пусто
   books.forEach((book) => { // добавляю в html контейнер, в котором описаны свойства книг
     list2.innerHTML += ` 
-    <div class="list"> 
+    <div class="bookStyle"> 
       <div class="book">
         <div class="book-image"><img src="${book.image}" class="book-image-style"/></div>
         <div class="book-title">${book.title}</div>
@@ -94,7 +94,7 @@ function addBook() { //Функция "добавить книгу"
     <input id="bookImage" class="inputStyle"placeholder="Ссылка на изображение">
 
     <button id="bookSave" onclick="saveBook()">Сохранить</button>
-
+    
   </div>
   `
 }  
@@ -109,6 +109,7 @@ function showForm() { //создать функцию "показать форм
   let isOpen = false //ввести переменную, которая говорит, что если форма открыта, то это неверно
 
   if (buttonClick) { // если нажали на кнопку "сохранить"
+    
     if (isOpen) { // если форма уже была открыта, значит нажали еще раз - закрываем
       openForm.style.display = "none" //скрываем контейнер
       isOpen = false // установить закрытым
