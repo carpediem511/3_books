@@ -44,7 +44,7 @@ const books = [ //создать массив из книг
 const list2 = document.getElementById("list") //найти в HTML контейнер с книгами
 
 function renderBooks() { // ввести функцию - визуализировать книги
-  list2.innerHTML = "" // пока в контйнере пусто
+  list2.innerHTML = "" // пока в контейнере пусто
   books.forEach((book) => { // добавляю в html контейнер, в котором описаны свойства книг
     list2.innerHTML += ` 
     <div class="list"> 
@@ -85,13 +85,13 @@ function addBook() { //Функция "добавить книгу"
   bookProperties.innerHTML = `
   <div class="propertiesNewBook" id="propertiesNewBookId">
 
-    <input id="bookName" placeholder="Имя книги">
+    <input id="bookName" class="inputStyle" placeholder="Имя книги">
 
-    <input id="bookAuthor" placeholder="Автор книги">
+    <input id="bookAuthor" class="inputStyle" placeholder="Автор книги">
 
-    <input id="bookYear" placeholder="Год публикации книги">
+    <input id="bookYear" class="inputStyle" placeholder="Год публикации книги">
 
-    <input id="bookImage" placeholder="Ссылка на изображение">
+    <input id="bookImage" class="inputStyle"placeholder="Ссылка на изображение">
 
     <button id="bookSave" onclick="saveBook()">Сохранить</button>
 

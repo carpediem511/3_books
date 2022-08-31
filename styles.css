@@ -15,8 +15,7 @@ html {
 }
 
 .book-image-style {
-    width: 170px;
-    height: 250px;
+    width: 90%;
 }
 
 .background {
@@ -50,7 +49,7 @@ html {
 }
 
 .background-button {
-    margin-bottom: 12%;
+    margin-bottom: 5%;
     padding: 20px 20px 20px 20px;
     font-size: 18px;
     border: none;
@@ -60,6 +59,59 @@ html {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 400;
     color: #a27464;
+    width: 25%;
+}
+
+.background-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+#bookSave {
+    margin-bottom: 5%;
+    padding: 10px 10px 10px 10px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 1px 1px 5px 1px #cbb6a5;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 300;
+    color: #a27464;
+    width: 20%; 
+    margin-left: 2%;
+    margin-top: 0.5%;
+}
+
+.propertiesNewBook {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputStyle {
+    border: 1px solid #cbb6a5; 
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 7px;
+    margin-top: 5px;
+    padding-left: 1%;
+    width: 20%;
+    height: 40px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 16px;
+    margin-left: 1%;
+    color: #b65814fe;
+    cursor: pointer;
+}
+
+.inputStyle:focus {
+    border: 2px solid #a27464;
+    outline: 0;
+    outline-offset: 0;
+}
+
+.inputStyle:first-child {
+    margin-left: 0%;
 }
 
 .content-books {
@@ -117,10 +169,13 @@ html {
     text-align: center;
     padding-bottom: 5%;
     padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .book-button {
-    width: 45%;
+    width: 60%;
     padding: 8px 8px 8px 8px;
     font-size: 14px;
     border: none;
@@ -130,4 +185,103 @@ html {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 400;
     color: #a27464;
+    margin-bottom: 3%;
+}
+
+@media (max-width: 1024px) {
+    .background-title, .taglin {
+        padding-left: 2%;
+    }
+
+    .background-button {
+        margin-left: 2%;
+    }
+
+    .list {
+        width: calc(100% / 2);
+        flex-wrap: wrap;
+    }
+
+    .book {
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .taglin {
+        font-size: 24px;
+    }
+
+    .background-title, .taglin {
+        padding-left: 2%;
+    }
+
+    .background-button {
+        padding: 10px 10px 10px 10px;
+        font-size: 16px;
+        width: 30%;
+        margin-left: 2%;
+    }
+
+    .propertiesNewBook {
+        flex-wrap: wrap;
+        max-width: 70%;
+        margin-left: 1.5%;
+    }
+
+    .inputStyle {
+        width: 40%;
+        margin-top: 1.5%;
+    }
+
+    .inputStyle:first-child {
+        margin-left: 1%;
+    }
+
+    #bookSave {
+        width: 40%;
+        margin-left: 1.5%;
+        margin-top: 2%;
+        margin-left: 30%;
+    }
+
+    #list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .list {
+        width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 700px){
+    .list {
+        width: calc(80%);
+    }
+}
+
+@media (max-width: 600px){
+    .inputStyle {
+        width: 70%;
+        margin-top: 1.5%;
+    }
+
+    .propertiesNewBook {
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .background-buttons {
+        flex-direction: row;
+        margin-left: 15%;
+    }
+
+    .background-button {
+        width: 40%;
+    }
+
+    #bookSave {
+        margin-top: 5%;
+    }
 }
