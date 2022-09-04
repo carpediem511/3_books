@@ -31,11 +31,24 @@
 
                 <button class="background-button">Перейти в каталог</button>
 
-                <button class="background-button openForm" id="addBookButton">Добавить книгу</button>
+                <button class="background-button openForm" id="addModalButton">Добавить книгу</button>
 
             </div>
 
-            <div id="bookPropertiesId"></div>
+            <div class="addModalWindow" id="addModalWindowId">
+
+                <div class="addModalContent">
+
+                    <input id="bookName" class="inputStyle" placeholder="Имя книги">
+                    <input id="bookAuthor" class="inputStyle" placeholder="Автор книги">
+                    <input id="bookYear" class="inputStyle" placeholder="Год публикации книги">
+                    <input id="bookImage" class="inputStyle"placeholder="Ссылка на изображение">
+                    <button id="bookSave">Сохранить</button>
+                    <button id="closeModalButton">Закрыть</button>
+
+                </div>
+                
+              </div>
 
         </div>
     </div>

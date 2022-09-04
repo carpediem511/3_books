@@ -41,7 +41,25 @@ const books = [ //создать массив из книг
   }
 ]
 
+const addModalWindow = document.getElementById("addModalWindowId") //найти элемент модального окна
+const closeModalWindowButton = document.getElementById("closeModalButton") //найти кнопку "закрыть модальное окно"
+const openModalWindowButton = document.getElementById("addModalButton") //найти кнопку "открыть модальное окно"
+const bookSave = document.getElementById("bookSave") //найти кнопку "сохранить книгу"
+const bookDeleteButton = document.getElementById("bookDelete") //найти кнопку "удалить книгу"
 const list2 = document.getElementById("list") //найти в HTML контейнер с книгами
+
+closeModalWindowButton.addEventListener("click", closeModalWindow) //по нажатию кнопки окно закрывается
+openModalWindowButton.addEventListener("click", openModalWindow) //по нажатию кнопки окно открывается
+bookSave.addEventListener("click", saveBook) //по нажатию кнопки книга сохраняется
+bookDeleteButton.addEventListener("click", deleteBook) //по нажатию кнопки книга удаляется
+
+function closeModalWindow() { //ввожу функцию "закрыть модальное окно"
+  addModalWindow.style.display = "none" //не показывать стили
+}
+
+function openModalWindow() { //ввожу функцию "открыть модальное окно"
+  addModalWindow.style.display = "flex" //показывать стили
+}
 
 function renderBooks() { // ввести функцию - визуализировать книги
   list2.innerHTML = "" // пока в контейнере пусто
@@ -54,8 +72,10 @@ function renderBooks() { // ввести функцию - визуализиро
         <div class="book-year">${book.year}</div>
         <div class="book-author">${book.authors}</div>
         <div class="book-buttons">
+        
           <button class="book-button">Изменить</button>
-          <button onclick="deleteBook(${book.id})" class="book-button">Удалить</button>
+          <button class="book-button" id="bookDelete" ${book.id}>Удалить</button>
+
         </div>
       </div>
     </div>
@@ -63,62 +83,27 @@ function renderBooks() { // ввести функцию - визуализиро
   })
 }
 
+function saveToLocalStorage() {
+  const booksJson = JSON.stringify(books) //перевести объект-массив в джэйсон
+  localStorage.setItem("books", booksJson) //передать данные в локал сторэдж
+}
+
+const booksJson = localStorage.getItem("books")
+
+if (booksJson) {
+  books = JSON.parse(booksJson)
+}
+
 function deleteBook(id) { //создаю функцию для удаления книги, кнопка "Удалить"
   const bookDel = books.find((findBook) => {
     return findBook.id === id //найти книгу по id
-  })
-
+})
   const bookIndex = books.indexOf(bookDel) //присвоить переменной индексы книг из массива
   
   books.splice(bookIndex, 1)
 
   renderBooks()
-}
-
-function addBook() { //Функция "добавить книгу"
-
-  const bookProperties = document.getElementById("bookPropertiesId") //найти контейнер в html
-
-  // Дальше проверка: если элемент не пустой, то нужно выйти из функции заранее при помощи "return"
-  if (bookProperties.childElementCount) return;
-
-  bookProperties.innerHTML = `
-  <div class="propertiesNewBook" id="propertiesNewBookId">
-
-    <input id="bookName" class="inputStyle" placeholder="Имя книги">
-
-    <input id="bookAuthor" class="inputStyle" placeholder="Автор книги">
-
-    <input id="bookYear" class="inputStyle" placeholder="Год публикации книги">
-
-    <input id="bookImage" class="inputStyle"placeholder="Ссылка на изображение">
-
-    <button id="bookSave" onclick="saveBook()">Сохранить</button>
-    
-  </div>
-  `
-}  
-
-const addBookButton = document.getElementById("addBookButton") //найти кнопку "Добавить книгу" в html
-addBookButton.addEventListener("click", addBook) //привязать к кнопке функцию, по клику на неё
-
-function showForm() { //создать функцию "показать форму"
-  let openForm = document.getElementById("bookPropertiesId") //найти контейнер в html
-  let buttonClick = document.getElementById("bookSave") //найти кнопку "сохранить книгу"
-
-  let isOpen = false //ввести переменную, которая говорит, что если форма открыта, то это неверно
-
-  if (buttonClick) { // если нажали на кнопку "сохранить"
-    
-    if (isOpen) { // если форма уже была открыта, значит нажали еще раз - закрываем
-      openForm.style.display = "none" //скрываем контейнер
-      isOpen = false // установить закрытым
-
-    } else { // иначе
-      openForm.style.display = ""
-      isOpen = true // установить открытым
-    }
-  }
+  saveToLocalStorage() 
 }
 
 function saveBook () { //ввести функцию "сохранить книгу"
@@ -138,12 +123,8 @@ function saveBook () { //ввести функцию "сохранить кни�
 
   books.push(book) //добавить книгу
   renderBooks() //отобразить книгу
-  hideField() //скрыть форму
-}
-
-function hideField() { //ввести функцию "скрыть форму"
-  const hideForm = document.getElementById("propertiesNewBookId") //найти контейнер, который надо скрыть
-  hideForm.remove() // удалить форму
+  closeModalWindow() //скрыть модальное окно при сохранении книги
+  saveToLocalStorage() //сохранить в локал сторэдж
 }
 
 renderBooks()

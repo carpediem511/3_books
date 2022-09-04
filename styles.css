@@ -241,6 +241,23 @@ html {
     margin-bottom: 3%;
 }
 
+.addModalWindow {
+    background-color: #e2d4d380;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.addModalContent {
+    background-color: white;
+    padding: 30px;
+}
+
 @media (max-width: 1024px) {
     .background-title, .taglin {
         padding-left: 2%;
