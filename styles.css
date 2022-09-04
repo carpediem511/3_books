@@ -86,9 +86,9 @@ html {
   flex-direction: column;
 }
 
-#bookSave {
+.background-button-navigation {
     margin-bottom: 5%;
-    padding: 10px 10px 10px 10px;
+    padding: 20px 20px 20px 20px;
     font-size: 16px;
     border: none;
     box-shadow: 1px 1px 5px 1px #cbb6a5;
@@ -97,9 +97,9 @@ html {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 300;
     color: #a27464;
-    width: 20%; 
-    margin-top: 0.5%;
-    margin-left: 2%;
+    width: calc(100% / 2); 
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 .booksSave {
@@ -114,18 +114,18 @@ html {
 
 .inputStyle {
     border: 1px solid #cbb6a5; 
-    border: none;
     padding: 10px 10px 10px 10px;
     border-radius: 7px;
     margin-top: 5px;
     padding-left: 1%;
-    width: 20%;
-    height: 40px;
+    width: 70%;
+    height: 70px;
     font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 16px;
+    font-size: 24px;
     margin-left: 1%;
     color: #b65814fe;
     cursor: pointer;
+    margin-bottom: 2%;
 }
 
 .inputStyle:focus {
@@ -133,11 +133,6 @@ html {
     outline: 0;
     outline-offset: 0;
     background-color: #f0e5d7;
-}
-
-#bookSave:focus {
-    color: black;
-    background-color: #a27464;
 }
 
 .background-button:focus {
@@ -149,7 +144,7 @@ html {
     background-color: #e2d4d3;
 }
 
-#bookSave:hover {
+.background-button-navigation:hover {
     background-color: #e2d4d3;
 }
 
@@ -256,6 +251,24 @@ html {
 .addModalContent {
     background-color: white;
     padding: 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #cbb6a5;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+.background-buttons-navigation {
+    display: flex;
+    width: 70%;
+    margin-top: 5%;
+}
+
+.textModalContent {
+    font-size: 26px;
+    margin-bottom: 7%;
+    margin-top: 5%;
 }
 
 @media (max-width: 1024px) {

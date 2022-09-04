@@ -45,7 +45,7 @@ const addModalWindow = document.getElementById("addModalWindowId") //найти 
 const closeModalWindowButton = document.getElementById("closeModalButton") //найти кнопку "закрыть модальное окно"
 const openModalWindowButton = document.getElementById("addModalButton") //найти кнопку "открыть модальное окно"
 const bookSave = document.getElementById("bookSave") //найти кнопку "сохранить книгу"
-const bookDeleteButton = document.getElementById("bookDelete") //найти кнопку "удалить книгу"
+
 const list2 = document.getElementById("list") //найти в HTML контейнер с книгами
 
 closeModalWindowButton.addEventListener("click", closeModalWindow) //по нажатию кнопки окно закрывается
@@ -83,7 +83,7 @@ function renderBooks() { // ввести функцию - визуализиро
   })
 }
 
-function saveToLocalStorage() {
+function saveToLocalStorage() { //ввожу функцию сохранить в локал сторэдж
   const booksJson = JSON.stringify(books) //перевести объект-массив в джэйсон
   localStorage.setItem("books", booksJson) //передать данные в локал сторэдж
 }
