@@ -41,11 +41,12 @@ html {
     color: #ff6a0093;
     text-shadow: 1px 1px 1px rgb(255, 255, 255);
     font-weight: 500;
-    font-size: 40px;
+    font-size: 60px;
 }
 
 .taglin {
-    padding-top: 17%;
+    padding-top: 7%;
+    margin-bottom: 3%;
     font-weight: 300;
     font-size: 26px;
     color: white;
@@ -89,7 +90,7 @@ html {
 .background-button-navigation {
     margin-bottom: 5%;
     padding: 20px 20px 20px 20px;
-    font-size: 16px;
+    font-size: 20px;
     border: none;
     box-shadow: 1px 1px 5px 1px #cbb6a5;
     border-radius: 7px;
@@ -249,7 +250,7 @@ html {
 }
 
 .addModalContent {
-    background-color: white;
+    background-color: whitesmoke;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px 1px #cbb6a5;
