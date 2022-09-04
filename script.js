@@ -119,8 +119,16 @@ function saveBook () { //ввести функцию "сохранить кни�
 
   books.push(book) //добавить книгу
   renderBooks() //отобразить книгу
+  clearField()
   closeModalWindow() //скрыть модальное окно при сохранении книги
   saveToLocalStorage() //сохранить в локал сторэдж
+}
+
+function clearField() {
+  document.getElementById("bookName").value = ""
+  document.getElementById("bookAuthor").value = ""
+  document.getElementById("bookYear").value = ""
+  document.getElementById("bookImage").value = ""
 }
 
 const booksJson = localStorage.getItem("books")
