@@ -3,7 +3,7 @@
 
 let booksCounter = 1;
 
-const books = [ //создать массив из книг
+let books = [ //создать массив из книг
   {
     // id: 1,
     id: booksCounter++,
@@ -45,13 +45,14 @@ const addModalWindow = document.getElementById("addModalWindowId") //найти 
 const closeModalWindowButton = document.getElementById("closeModalButton") //найти кнопку "закрыть модальное окно"
 const openModalWindowButton = document.getElementById("addModalButton") //найти кнопку "открыть модальное окно"
 const bookSave = document.getElementById("bookSave") //найти кнопку "сохранить книгу"
+//const bookDeleteButton = document.getElementById("bookDelete")
 
 const list2 = document.getElementById("list") //найти в HTML контейнер с книгами
 
 closeModalWindowButton.addEventListener("click", closeModalWindow) //по нажатию кнопки окно закрывается
 openModalWindowButton.addEventListener("click", openModalWindow) //по нажатию кнопки окно открывается
 bookSave.addEventListener("click", saveBook) //по нажатию кнопки книга сохраняется
-bookDeleteButton.addEventListener("click", deleteBook) //по нажатию кнопки книга удаляется
+//bookDeleteButton.addEventListener("click", deleteBook) //по нажатию кнопки книга удаляется
 
 function closeModalWindow() { //ввожу функцию "закрыть модальное окно"
   addModalWindow.style.display = "none" //не показывать стили
@@ -74,7 +75,8 @@ function renderBooks() { // ввести функцию - визуализиро
         <div class="book-buttons">
         
           <button class="book-button">Изменить</button>
-          <button class="book-button" id="bookDelete" ${book.id}>Удалить</button>
+          <button onclick="deleteBook(${book.id})" class="book-button" ${book.id}>Удалить</button>
+          
 
         </div>
       </div>
@@ -86,12 +88,6 @@ function renderBooks() { // ввести функцию - визуализиро
 function saveToLocalStorage() { //ввожу функцию сохранить в локал сторэдж
   const booksJson = JSON.stringify(books) //перевести объект-массив в джэйсон
   localStorage.setItem("books", booksJson) //передать данные в локал сторэдж
-}
-
-const booksJson = localStorage.getItem("books")
-
-if (booksJson) {
-  books = JSON.parse(booksJson)
 }
 
 function deleteBook(id) { //создаю функцию для удаления книги, кнопка "Удалить"
@@ -125,6 +121,12 @@ function saveBook () { //ввести функцию "сохранить кни�
   renderBooks() //отобразить книгу
   closeModalWindow() //скрыть модальное окно при сохранении книги
   saveToLocalStorage() //сохранить в локал сторэдж
+}
+
+const booksJson = localStorage.getItem("books")
+
+if (booksJson) {
+  books = JSON.parse(booksJson)
 }
 
 renderBooks()
