@@ -258,6 +258,20 @@ html {
     flex-direction: column;
     width: 50%;
     align-items: center;
+    animation-duration: 0.55s;  
+    animation-fill-mode: both; 
+    animation-name: modalWindowAnimation; 
+}
+
+@keyframes modalWindowAnimation { 
+    0% {                
+        opacity: 0;
+        transform: translate3d(0px, -100%, 0px);
+    }
+    100% {              
+        opacity: 1;
+        transform: none;
+    }
 }
 
 .background-buttons-navigation {
