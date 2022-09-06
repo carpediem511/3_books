@@ -38,21 +38,49 @@ let books = [ //создать массив из книг
     authors: "Джоан Роулинг",
     year: "2000",
     image: "./book4.jpg"
-  }
+  },
+
+  {
+    // id: 5,
+    id: booksCounter++,
+    title: "Гарри Поттер и орден Феникса",
+    authors: "Джоан Роулинг",
+    year: "2003",
+    image: "./book5.jpg"
+  },
+
+
+{
+  // id: 6,
+  id: booksCounter++,
+  title: "Гарри Поттер и принц-полукровка",
+  authors: "Джоан Роулинг",
+  year: "2005",
+  image: "./book6.jpg"
+},
+
+
+{
+  // id: 7,
+  id: booksCounter++,
+  title: "Гарри Поттер и дары смерти",
+  authors: "Джоан Роулинг",
+  year: "2007",
+  image: "./book7.jpg"
+}
+
 ]
 
 const addModalWindow = document.getElementById("addModalWindowId") //найти элемент модального окна
 const closeModalWindowButton = document.getElementById("closeModalButton") //найти кнопку "закрыть модальное окно"
 const openModalWindowButton = document.getElementById("addModalButton") //найти кнопку "открыть модальное окно"
 const bookSave = document.getElementById("bookSave") //найти кнопку "сохранить книгу"
-//const bookDeleteButton = document.getElementById("bookDelete")
 
 const list2 = document.getElementById("list") //найти в HTML контейнер с книгами
 
 closeModalWindowButton.addEventListener("click", closeModalWindow) //по нажатию кнопки окно закрывается
 openModalWindowButton.addEventListener("click", openModalWindow) //по нажатию кнопки окно открывается
 bookSave.addEventListener("click", saveBook) //по нажатию кнопки книга сохраняется
-//bookDeleteButton.addEventListener("click", deleteBook) //по нажатию кнопки книга удаляется
 
 function closeModalWindow() { //ввожу функцию "закрыть модальное окно"
   addModalWindow.style.display = "none" //не показывать стили
@@ -77,7 +105,6 @@ function renderBooks() { // ввести функцию - визуализиро
           <button class="book-button">Изменить</button>
           <button onclick="deleteBook(${book.id})" class="book-button" ${book.id}>Удалить</button>
           
-
         </div>
       </div>
     </div>
