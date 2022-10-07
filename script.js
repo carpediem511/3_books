@@ -75,12 +75,14 @@ const addModalWindow = document.getElementById("addModalWindowId") //найти 
 const closeModalWindowButton = document.getElementById("closeModalButton") //найти кнопку "закрыть модальное окно"
 const openModalWindowButton = document.getElementById("addModalButton") //найти кнопку "открыть модальное окно"
 const bookSave = document.getElementById("bookSave") //найти кнопку "сохранить книгу"
+const bookDelete = document.getElementById("deleteBookButton-${book.id}")
 
 const list2 = document.getElementById("list") //найти в HTML контейнер с книгами
 
 closeModalWindowButton.addEventListener("click", closeModalWindow) //по нажатию кнопки окно закрывается
 openModalWindowButton.addEventListener("click", openModalWindow) //по нажатию кнопки окно открывается
 bookSave.addEventListener("click", saveBook) //по нажатию кнопки книга сохраняется
+bookDelete.addEventListener("click", deleteBook)
 
 function closeModalWindow() { //ввожу функцию "закрыть модальное окно"
   addModalWindow.style.display = "none" //не показывать стили
@@ -103,12 +105,14 @@ function renderBooks() { // ввести функцию - визуализиро
         <div class="book-buttons">
         
           <button class="book-button">Изменить</button>
-          <button onclick="deleteBook(${book.id})" class="book-button" ${book.id}>Удалить</button>
+          <button id="deleteBookButton-${book.id}" class="book-button">Удалить</button>
           
         </div>
       </div>
     </div>
     `
+    deleteBook();
+    saveToLocalStorage()
   })
 }
 

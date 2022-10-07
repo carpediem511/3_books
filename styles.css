@@ -80,6 +80,7 @@ html {
     font-weight: 400;
     color: #a27464;
     width: 25%;
+    transition: all 500ms;
 }
 
 .background-buttons {
@@ -101,6 +102,7 @@ html {
     width: calc(100% / 2); 
     margin-right: 5%;
     margin-left: 5%;
+    transition: all 500ms;
 }
 
 .booksSave {
@@ -145,7 +147,6 @@ html {
 }
 
 .book-button:hover {
-
     background-color: rgb(213, 15, 15);
     color: white;
 }
@@ -230,11 +231,12 @@ html {
     font-weight: 400;
     color: #a27464;
     margin-bottom: 3%;
+    transition: all 500ms;
 }
 
 .addModalWindow {
     background-color: #e2d4d380;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
