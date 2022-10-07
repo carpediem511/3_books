@@ -110,6 +110,8 @@ function renderBooks() { // ввести функцию - визуализиро
       </div>
     </div>
     `
+  })
+  
     books.forEach((book) =>{
       document.getElementById(`deleteBookButton-${book.id}`).addEventListener("click", () => {
         deleteBook(book.id);
@@ -117,7 +119,7 @@ function renderBooks() { // ввести функцию - визуализиро
     })
     
     saveToLocalStorage()
-  })
+  
 }
 
 function saveToLocalStorage() { //ввожу функцию сохранить в локал сторэдж
