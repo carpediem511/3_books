@@ -97,10 +97,10 @@ function renderBooks() {   // ввести функцию - визуализир
         <div class="book-title">${book.title}</div>
         <div class="book-year">${book.year}</div>
         <div class="book-author">${book.authors}</div>
-
+        
         <div class="book-buttons">
         
-          <button id="openModalWindowUpdate-${book.id}" class="book-button">Обновить</button>
+          <button id="openWindowUpdate-${book.id}" class="book-button">Обновить</button>
           <button id="deleteBookButton-${book.id}" class="book-button">Удалить</button>
           
         </div>
@@ -109,14 +109,35 @@ function renderBooks() {   // ввести функцию - визуализир
     `;
   });
 
-books.forEach((book) => {  //прохожусь по каждому элементу массива
+  books.forEach((book) => {  //прохожусь по каждому элементу массива
 
-  document.getElementById(`deleteBookButton-${book.id}`).addEventListener("click", () => { //ищу нужную книгу по id
-    deleteBook(book.id); //если нажали на кнопку, книга удаляется
+    document.getElementById(`deleteBookButton-${book.id}`).addEventListener("click", () => { //ищу нужную книгу по id
+      deleteBook(book.id); //если нажали на кнопку, книга удаляется
+    });
   });
- });
 
   saveToLocalStorage(); //сохраняю изменения в браузере
+}
+
+function saveBook() {  //ввести функцию "сохранить книгу"
+  const bookNameValue = document.getElementById("bookName").value; //получить значение из поля "имя"
+  const bookAuthorValue = document.getElementById("bookAuthor").value; //получить значение из поля "автор"
+  const bookYearValue = document.getElementById("bookYear").value; //получить значение из поля "год"
+
+  const book = {  //ввести переменную, где будут храниться все эти значения value
+
+    id: booksCounter++,
+    title: bookNameValue,
+    authors: bookAuthorValue,
+    year: bookYearValue,
+    image: getImage(),
+  };
+
+  books.push(book); //добавить книгу
+  renderBooks(); //отобразить книгу
+  clearField(); //очистить поля
+  closeModalWindow(); //скрыть модальное окно при сохранении книги
+  saveToLocalStorage(); //сохранить в локал сторэдж
 }
 
 function saveToLocalStorage() {    //ввожу функцию сохранить в локал сторэдж
@@ -136,28 +157,6 @@ function deleteBook(id) {   //создаю функцию для удалени�
 
   renderBooks();
   saveToLocalStorage();
-}
-
-function saveBook() {  //ввести функцию "сохранить книгу"
-  const bookNameValue = document.getElementById("bookName").value; //получить значение из поля "имя"
-  const bookAuthorValue = document.getElementById("bookAuthor").value; //получить значение из поля "автор"
-  const bookYearValue = document.getElementById("bookYear").value; //получить значение из поля "год"
-  const bookImageValue = document.getElementById("bookImage").value; //получение значение из поля "ссылка"
-
-  const book = {  //ввести переменную, где будут храниться все эти значения value
-
-    id: booksCounter++,
-    title: bookNameValue,
-    authors: bookAuthorValue,
-    year: bookYearValue,
-    image: getImage(),
-  };
-
-  books.push(book); //добавить книгу
-  renderBooks(); //отобразить книгу
-  clearField(); //очистить поля
-  closeUpdate(); //скрыть модальное окно при сохранении книги
-  saveToLocalStorage(); //сохранить в локал сторэдж
 }
 
 function clearField() {  //очистить поля
