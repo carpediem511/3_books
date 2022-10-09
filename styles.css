@@ -234,7 +234,7 @@ html {
     transition: all 500ms;
 }
 
-.addModalWindow {
+.addModalWindow, .addModalWindowUpdate {
     background-color: #e2d4d380;
     position: fixed;
     top: 0;

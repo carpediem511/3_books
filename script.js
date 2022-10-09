@@ -79,21 +79,17 @@ closeModalWindowButton.addEventListener("click", closeModalWindow); //по на�
 openModalWindowButton.addEventListener("click", openModalWindow); //по нажатию кнопки окно открывается
 bookSave.addEventListener("click", saveBook); //по нажатию кнопки книга сохраняется
 
-function closeModalWindow() {
-  //ввожу функцию "закрыть модальное окно"
+function closeModalWindow() {  //ввожу функцию "закрыть модальное окно"
   addModalWindow.style.display = "none"; //не показывать стили
 }
 
-function openModalWindow() {
-  //ввожу функцию "открыть модальное окно"
+function openModalWindow() {  //ввожу функцию "открыть модальное окно"
   addModalWindow.style.display = "flex"; //показывать стили
 }
 
-function renderBooks() {
-  // ввести функцию - визуализировать книги
+function renderBooks() {   // ввести функцию - визуализировать книги
   list2.innerHTML = ""; // пока в контейнере пусто
-  books.forEach((book) => {
-    // добавляю в html контейнер, в котором описаны свойства книг
+  books.forEach((book) => {     // добавляю в html контейнер, в котором описаны свойства книг
     list2.innerHTML += ` 
     <div class="bookStyle"> 
       <div class="book">
@@ -101,9 +97,10 @@ function renderBooks() {
         <div class="book-title">${book.title}</div>
         <div class="book-year">${book.year}</div>
         <div class="book-author">${book.authors}</div>
+
         <div class="book-buttons">
         
-          <button class="book-button">Изменить</button>
+          <button id="openModalWindowUpdate-${book.id}" class="book-button">Обновить</button>
           <button id="deleteBookButton-${book.id}" class="book-button">Удалить</button>
           
         </div>
@@ -112,37 +109,27 @@ function renderBooks() {
     `;
   });
 
-  books.forEach((book) => {
-    //прохожусь по каждому элементу массива
-    document
-      .getElementById(`deleteBookButton-${book.id}`)
-      .addEventListener("click", () => {
-        //ищу нужную книгу по id
-        deleteBook(book.id); //если нажали на кнопку, книга удаляется
-      });
+books.forEach((book) => {  //прохожусь по каждому элементу массива
 
-    const check = document.getElementById(`deleteBookButton-${book.id}`); //ввожу перменную и нахожу книгу, которую нужно удалить
-
-    if (check) {
-      //проверяю условие - если кнопка нажата
-      check.addEventListener("click", () => deleteBook(book.id)); //то книга удаляется
-    }
+  document.getElementById(`deleteBookButton-${book.id}`).addEventListener("click", () => { //ищу нужную книгу по id
+    deleteBook(book.id); //если нажали на кнопку, книга удаляется
   });
+ });
 
   saveToLocalStorage(); //сохраняю изменения в браузере
 }
 
-function saveToLocalStorage() {
-  //ввожу функцию сохранить в локал сторэдж
+function saveToLocalStorage() {    //ввожу функцию сохранить в локал сторэдж
   const booksJson = JSON.stringify(books); //перевести объект-массив в джэйсон
   localStorage.setItem("books", booksJson); //передать данные в локал сторэдж
 }
 
-function deleteBook(id) {
-  //создаю функцию для удаления книги, кнопка "Удалить"
+function deleteBook(id) {   //создаю функцию для удаления книги, кнопка "Удалить"
+
   const bookDel = books.find((findBook) => {
     return findBook.id === id; //найти книгу по id
   });
+
   const bookIndex = books.indexOf(bookDel); //присвоить переменной индексы книг из массива
 
   books.splice(bookIndex, 1);
@@ -151,36 +138,45 @@ function deleteBook(id) {
   saveToLocalStorage();
 }
 
-function saveBook() {
-  //ввести функцию "сохранить книгу"
+function saveBook() {  //ввести функцию "сохранить книгу"
   const bookNameValue = document.getElementById("bookName").value; //получить значение из поля "имя"
   const bookAuthorValue = document.getElementById("bookAuthor").value; //получить значение из поля "автор"
   const bookYearValue = document.getElementById("bookYear").value; //получить значение из поля "год"
   const bookImageValue = document.getElementById("bookImage").value; //получение значение из поля "ссылка"
 
-  const book = {
-    //ввести переменную, где будут храниться все эти значения value
+  const book = {  //ввести переменную, где будут храниться все эти значения value
 
     id: booksCounter++,
     title: bookNameValue,
     authors: bookAuthorValue,
     year: bookYearValue,
-    image: bookImageValue,
+    image: getImage(),
   };
 
   books.push(book); //добавить книгу
   renderBooks(); //отобразить книгу
   clearField(); //очистить поля
-  closeModalWindow(); //скрыть модальное окно при сохранении книги
+  closeUpdate(); //скрыть модальное окно при сохранении книги
   saveToLocalStorage(); //сохранить в локал сторэдж
 }
 
-function clearField() {
-  //очистить поля
+function clearField() {  //очистить поля
   document.getElementById("bookName").value = "";
   document.getElementById("bookAuthor").value = "";
   document.getElementById("bookYear").value = "";
   document.getElementById("bookImage").value = "";
+}
+
+function getImage (bookImageValue) {
+
+  let checkImage
+
+  if (bookImageValue) {
+    checkImage = bookImageValue
+  } else {
+    checkImage = "./none-image.jpg"
+  }
+  return checkImage
 }
 
 const booksJson = localStorage.getItem("books"); //преобразование из JSON в JS
