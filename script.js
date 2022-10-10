@@ -191,13 +191,13 @@ const updateBookButton = document.getElementById("updateBookButton"); //найт
 
 updateCloseButton.addEventListener("click", closeUpdateWindow); //по нажатию кнопки окно закрывается
 openWindowUpdateButton.addEventListener("click", openUpdateWindow); //по нажатию кнопки окно открывается
-openWindowUpdateButton.addEventListener("click", saveBook); //по нажатию кнопки книга сохраняется
+updateBookButton.addEventListener("click", updateBook); //по нажатию кнопки книга обновляется
 
-function closeUpdateWindow() {  //ввожу функцию "закрыть модальное окно"
+function closeUpdateWindow() {  //ввожу функцию закрыть окно "обновить"
   updateWindow.style.display = "none"; //не показывать стили
 }
 
-function openUpdateWindow() {  //ввожу функцию "открыть модальное окно"
+function openUpdateWindow() {  //ввожу функцию открыть окно "обновить"
   updateWindow.style.display = "flex"; //показывать стили
 }
 
