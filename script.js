@@ -184,4 +184,21 @@ if (booksJson) {
   books = JSON.parse(booksJson);
 }
 
+const updateWindow = document.getElementById("addUpdateWindow"); //найти элемент окна "обновление"
+const updateCloseButton = document.getElementById("updateCloseButton"); //найти кнопку закрыть окно "обновить"
+const openWindowUpdateButton = document.getElementById(`openWindowUpdate-${book.id}`); //найти кнопку открыть окно "обновить"
+const updateBookButton = document.getElementById("updateBookButton"); //найти кнопку "обновить книгу"
+
+updateCloseButton.addEventListener("click", closeUpdateWindow); //по нажатию кнопки окно закрывается
+openWindowUpdateButton.addEventListener("click", openUpdateWindow); //по нажатию кнопки окно открывается
+openWindowUpdateButton.addEventListener("click", saveBook); //по нажатию кнопки книга сохраняется
+
+function closeUpdateWindow() {  //ввожу функцию "закрыть модальное окно"
+  updateWindow.style.display = "none"; //не показывать стили
+}
+
+function openUpdateWindow() {  //ввожу функцию "открыть модальное окно"
+  updateWindow.style.display = "flex"; //показывать стили
+}
+
 renderBooks();
