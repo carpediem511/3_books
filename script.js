@@ -116,6 +116,13 @@ function renderBooks() {   // ввести функцию - визуализир
     });
   });
 
+  books.forEach((book) => {
+
+    document.getElementById(`openWindowUpdate-${book.id}`).addEventListener("click", () => {
+      openUpdateWindow(book.id);
+    });
+  });
+
   saveToLocalStorage(); //сохраняю изменения в браузере
 }
 
@@ -186,19 +193,47 @@ if (booksJson) {
 
 const updateWindow = document.getElementById("addUpdateWindow"); //найти элемент окна "обновление"
 const updateCloseButton = document.getElementById("updateCloseButton"); //найти кнопку закрыть окно "обновить"
-const openWindowUpdateButton = document.getElementById(`openWindowUpdate-${book.id}`); //найти кнопку открыть окно "обновить"
 const updateBookButton = document.getElementById("updateBookButton"); //найти кнопку "обновить книгу"
 
 updateCloseButton.addEventListener("click", closeUpdateWindow); //по нажатию кнопки окно закрывается
-openWindowUpdateButton.addEventListener("click", openUpdateWindow); //по нажатию кнопки окно открывается
 updateBookButton.addEventListener("click", updateBook); //по нажатию кнопки книга обновляется
 
 function closeUpdateWindow() {  //ввожу функцию закрыть окно "обновить"
   updateWindow.style.display = "none"; //не показывать стили
 }
 
+function updateInput() {
+  document.getElementById("bookNameUpdate").value = book.title
+  document.getElementById("bookAuthorUpdate").value = book.authors
+  document.getElementById("bookYearUpdate").value = book.year
+}
+
 function openUpdateWindow() {  //ввожу функцию открыть окно "обновить"
   updateWindow.style.display = "flex"; //показывать стили
+
+  const book = books.find((findBook) => {
+    return findBook.id === id; //найти книгу по id
+  });
+
+  updateInput()
+  
 }
+
+function updateBook() {
+
+  const book = books.find((findBook) => {
+    return findBook.id === id; //найти книгу по id
+  });
+
+  const bookIndexUp = books.indexOf(book); //присвоить переменной индексы книг из массива
+
+  books.splice(book, 1);
+
+  saveToLocalStorage();
+  renderBooks();
+  
+}
+
+
 
 renderBooks();
