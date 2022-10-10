@@ -227,7 +227,7 @@ function updateBook() {
 
   const bookIndexUp = books.indexOf(book); //присвоить переменной индексы книг из массива
 
-  books.splice(book, 1);
+  books.splice(bookIndexUp, 1);
 
   saveToLocalStorage();
   renderBooks();
