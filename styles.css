@@ -1,86 +1,86 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .list {
-    margin: 0 auto;
-    max-width: 1000px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin: 0 auto;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .bookStyle {
-    display: flex;
-    justify-content: center;
-    width: calc(100% / 4);
+  display: flex;
+  justify-content: center;
+  width: calc(100% / 4);
 }
 
 .book-image-style {
-    width: 90%;
+  width: 90%;
 }
 
 .background {
-    background: linear-gradient(0deg, #e2d4d35e,#e2d4d35e), url("photofon.jpg");
-    background-position: top;
-    background-size: cover;
+  background: linear-gradient(0deg, #e2d4d35e, #e2d4d35e), url("photofon.jpg");
+  background-position: top;
+  background-size: cover;
 }
 
 .background-content {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .background-title {
-    padding-top: 23%;
-    color: #ff6a0093;
-    text-shadow: 1px 1px 1px rgb(255, 255, 255);
-    font-weight: 500;
-    font-size: 60px;
+  padding-top: 23%;
+  color: #ff6a0093;
+  text-shadow: 1px 1px 1px rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 60px;
 }
 
 .taglin {
-    padding-top: 7%;
-    margin-bottom: 3%;
-    font-weight: 300;
-    font-size: 26px;
-    color: white;
-    padding-bottom: 5%;
-    line-height: 1.4;
-    text-shadow: 3px 4px 4px rgb(0, 0, 0);
-    animation: taglinAnimation 3s linear 0s 1 normal none;
+  padding-top: 7%;
+  margin-bottom: 3%;
+  font-weight: 300;
+  font-size: 26px;
+  color: white;
+  padding-bottom: 5%;
+  line-height: 1.4;
+  text-shadow: 3px 4px 4px rgb(0, 0, 0);
+  animation: taglinAnimation 3s linear 0s 1 normal none;
 }
 
 @keyframes taglinAnimation {
-	0% {
-		opacity: 0;
-		transform: translateX(-900px);
-	}
+  0% {
+    opacity: 0;
+    transform: translateX(-900px);
+  }
 
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .background-button {
-    margin-bottom: 5%;
-    padding: 20px 20px 20px 20px;
-    font-size: 18px;
-    border: none;
-    box-shadow: 1px 1px 5px 1px #cbb6a5;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-weight: 400;
-    color: #a27464;
-    width: 25%;
-    transition: all 500ms;
+  margin-bottom: 5%;
+  padding: 20px 20px 20px 20px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 1px 1px 5px 1px #cbb6a5;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 400;
+  color: #a27464;
+  width: 25%;
+  transition: all 500ms;
 }
 
 .background-buttons {
@@ -89,391 +89,391 @@ html {
 }
 
 .background-button-navigation {
-    margin-bottom: 5%;
-    padding: 20px 20px 20px 20px;
-    font-size: 20px;
-    border: none;
-    box-shadow: 1px 1px 5px 1px #cbb6a5;
-    border-radius: 7px;
-    cursor: pointer;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-weight: 300;
-    color: #a27464;
-    width: calc(100% / 2); 
-    margin-right: 5%;
-    margin-left: 5%;
-    transition: all 500ms;
+  margin-bottom: 5%;
+  padding: 20px 20px 20px 20px;
+  font-size: 20px;
+  border: none;
+  box-shadow: 1px 1px 5px 1px #cbb6a5;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 300;
+  color: #a27464;
+  width: calc(100% / 2);
+  margin-right: 5%;
+  margin-left: 5%;
+  transition: all 500ms;
 }
 
 .booksSave {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .inputStyle {
-    border: 1px solid #cbb6a5; 
-    padding: 10px 10px 10px 10px;
-    border-radius: 7px;
-    margin-top: 5px;
-    padding-left: 1%;
-    width: 70%;
-    height: 70px;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 24px;
-    margin-left: 1%;
-    color: #b65814fe;
-    cursor: pointer;
-    margin-bottom: 2%;
+  border: 1px solid #cbb6a5;
+  padding: 10px 10px 10px 10px;
+  border-radius: 7px;
+  margin-top: 5px;
+  padding-left: 1%;
+  width: 70%;
+  height: 70px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 24px;
+  margin-left: 1%;
+  color: #b65814fe;
+  cursor: pointer;
+  margin-bottom: 2%;
 }
 
 .inputStyle:focus {
-    border: 2px solid #a27464;
-    outline: 0;
-    outline-offset: 0;
-    background-color: #f0e5d7;
+  border: 2px solid #a27464;
+  outline: 0;
+  outline-offset: 0;
+  background-color: #f0e5d7;
 }
 
 .background-button:focus {
-    color: black;
-    background-color: #a27464;
+  color: black;
+  background-color: #a27464;
 }
 
 .background-button:hover {
-    background-color: #e2d4d3;
+  background-color: #e2d4d3;
 }
 
 .background-button-navigation:hover {
-    background-color: #e2d4d3;
+  background-color: #e2d4d3;
 }
 
 .book-button:hover {
-    background-color: rgb(213, 15, 15);
-    color: white;
+  background-color: rgb(213, 15, 15);
+  color: white;
 }
 
 .book-button:focus {
-    color: black;
-    background-color: #a27464;
+  color: black;
+  background-color: #a27464;
 }
 
 .inputStyle:first-child {
-    margin-left: 0%;
+  margin-left: 0%;
 }
 
 .content-books {
-    background-color: #f0e5d7;
+  background-color: #f0e5d7;
 }
 
 .novelties-title {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    text-align: center;
-    font-size: 26px;
-    color: #ff6a0093;
-    text-shadow: 1px 1px 1px rgb(104, 103, 103);
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 26px;
+  color: #ff6a0093;
+  text-shadow: 1px 1px 1px rgb(104, 103, 103);
 }
 
 .book {
-    background-color: white;
-    width: calc(85%);
-    margin-bottom: 15%;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px 1px #cbb6a5;
+  background-color: white;
+  width: calc(85%);
+  margin-bottom: 15%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 1px #cbb6a5;
 }
 
 .book-image {
-    text-align: center;
-    padding-top: 10%;
+  text-align: center;
+  padding-top: 12%;
 }
 
 .book-title {
-    padding-top: 7%;
-    padding-bottom: 7%;
-    text-align: center;
-    font-size: 18px;
-    color: #6e463c;
+  padding-top: 7%;
+  padding-bottom: 7%;
+  text-align: center;
+  font-size: 18px;
+  color: #6e463c;
 }
 
 .book-year {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    text-align: center;
-    font-size: 16px;
-    color: #e2d4d3;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 16px;
+  color: #e2d4d3;
 }
 
 .book-author {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    text-align: center;
-    font-size: 16px;
-    color: #bd9d77;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 16px;
+  color: #bd9d77;
 }
 
 .book-buttons {
-    text-align: center;
-    padding-bottom: 5%;
-    padding-top: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  text-align: center;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book-button {
-    width: 60%;
-    padding: 8px 8px 8px 8px;
-    font-size: 14px;
-    border: none;
-    box-shadow: 0px 1px 1px 0px #cbb6a5;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-weight: 400;
-    color: #a27464;
-    margin-bottom: 3%;
-    transition: all 500ms;
+  width: 60%;
+  padding: 8px 8px 8px 8px;
+  font-size: 14px;
+  border: none;
+  box-shadow: 0px 1px 1px 0px #cbb6a5;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 400;
+  color: #a27464;
+  margin-bottom: 3%;
+  transition: all 500ms;
 }
 
-.addModalWindow, .addModalWindowUpdate {
-    background-color: #e2d4d380;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
+.addModalWindow,
+.addModalWindowUpdate {
+  background-color: #e2d4d380;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .addModalContent {
-    background-color: whitesmoke;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px 1px #cbb6a5;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    align-items: center;
-    animation-duration: 0.55s;  
-    animation-fill-mode: both; 
-    animation-name: modalWindowAnimation; 
+  background-color: whitesmoke;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 1px #cbb6a5;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  animation-duration: 0.55s;
+  animation-fill-mode: both;
+  animation-name: modalWindowAnimation;
 }
 
-@keyframes modalWindowAnimation { 
-    0% {                
-        opacity: 0;
-        transform: translate3d(0px, -100%, 0px);
-    }
-    100% {              
-        opacity: 1;
-        transform: none;
-    }
+@keyframes modalWindowAnimation {
+  0% {
+    opacity: 0;
+    transform: translate3d(0px, -100%, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .background-buttons-navigation {
-    display: flex;
-    width: 70%;
-    margin-top: 5%;
+  display: flex;
+  width: 70%;
+  margin-top: 5%;
 }
 
 .textModalContent {
-    font-size: 26px;
-    margin-bottom: 7%;
-    margin-top: 5%;
-    text-align: center;
+  font-size: 26px;
+  margin-bottom: 7%;
+  margin-top: 5%;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
-    .background-title, .taglin {
-        padding-left: 2%;
-    }
+  .background-title,
+  .taglin {
+    padding-left: 2%;
+  }
 
-    .background-button {
-        margin-left: 2%;
-    }
+  .background-button {
+    margin-left: 2%;
+  }
 
-    .bookStyle {
-        width: calc(100% / 3);
-        flex-wrap: wrap;
-    }
+  .bookStyle {
+    width: calc(100% / 3);
+    flex-wrap: wrap;
+  }
 
-    .book {
-        width: 85%;
-    }
+  .book {
+    width: 85%;
+  }
 
-    .addModalContent {
-        width: 60%;
-    }
+  .addModalContent {
+    width: 60%;
+  }
 
-    .background-buttons-navigation {
-        display: flex;
-        width: 60%;
-        margin-top: 5%;
-    }
-    
-    .textModalContent {
-        font-size: 26px;
-        margin-bottom: 7%;
-        margin-top: 5%;
-    }
+  .background-buttons-navigation {
+    display: flex;
+    width: 60%;
+    margin-top: 5%;
+  }
 
-    .background-button-navigation {
-        margin-left: 1%;
-    }
+  .textModalContent {
+    font-size: 26px;
+    margin-bottom: 7%;
+    margin-top: 5%;
+  }
+
+  .background-button-navigation {
+    margin-left: 1%;
+  }
 }
 
 @media (max-width: 850px) {
-    .background-title {
-        font-size: 42px;
-    }
+  .background-title {
+    font-size: 42px;
+  }
 
-    .taglin {
-        font-size: 26px;
-    }
+  .taglin {
+    font-size: 26px;
+  }
 
-    .background-button {
-        padding: 15px 15px 15px 15px;
-        width: 30%;
-    }
+  .background-button {
+    padding: 15px 15px 15px 15px;
+    width: 30%;
+  }
 
-    .textModalContent {
-        font-size: 24px;
-    }
+  .textModalContent {
+    font-size: 24px;
+  }
 
-    .inputStyle {
-        height: 50px;
-        font-size: 20px;
-    }
+  .inputStyle {
+    height: 50px;
+    font-size: 20px;
+  }
 
-    .background-buttons-navigation {
-        width: 70%;
-    }
+  .background-buttons-navigation {
+    width: 70%;
+  }
 
-    .background-button-navigation {
-        padding: 15px 15px 15px 15px;
-        font-size: 18зч;
-    }
-
+  .background-button-navigation {
+    padding: 15px 15px 15px 15px;
+    font-size: 18зч;
+  }
 }
 
 @media (max-width: 768px) {
-    .taglin {
-        font-size: 24px;
-    }
+  .taglin {
+    font-size: 24px;
+  }
 
-    .background-title, .taglin {
-        padding-left: 2%;
-    }
+  .background-title,
+  .taglin {
+    padding-left: 2%;
+  }
 
-    .background-button {
-        padding: 10px 10px 10px 10px;
-        font-size: 16px;
-        width: 30%;
-        margin-left: 2%;
-    }
+  .background-button {
+    padding: 10px 10px 10px 10px;
+    font-size: 16px;
+    width: 30%;
+    margin-left: 2%;
+  }
 
-    .inputStyle {
-        width: 85%;
-        margin-top: 1.5%;
-        height: 50px;
-        font-size: 20px;
-    }
+  .inputStyle {
+    width: 85%;
+    margin-top: 1.5%;
+    height: 50px;
+    font-size: 20px;
+  }
 
-    .inputStyle:first-child {
-        margin-left: 1%;
-    }
+  .inputStyle:first-child {
+    margin-left: 1%;
+  }
 
-    #list {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  #list {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .bookStyle {
-        width: calc(100% / 2);
-    }
+  .bookStyle {
+    width: calc(100% / 2);
+  }
 
-    .addModalContent {
-        width: 60%;
-    }
+  .addModalContent {
+    width: 60%;
+  }
 
-    .background-buttons-navigation {
-        display: flex;
-        width: 87%;
-    }
-    
-    .textModalContent {
-        font-size: 26px;
-    }
+  .background-buttons-navigation {
+    display: flex;
+    width: 87%;
+  }
 
-    .background-button-navigation {
-        margin-left: 3%;
-        padding: 10px 10px 10px 10px;
-    }
+  .textModalContent {
+    font-size: 26px;
+  }
+
+  .background-button-navigation {
+    margin-left: 3%;
+    padding: 10px 10px 10px 10px;
+  }
 }
 
-
-@media (max-width: 700px){
-    .bookStyle {
-        width: calc(80%);
-    }
+@media (max-width: 700px) {
+  .bookStyle {
+    width: calc(80%);
+  }
 }
 
-@media (max-width: 600px){
-    .inputStyle {
-        width: 70%;
-        margin-top: 1.5%;
-    }
+@media (max-width: 600px) {
+  .inputStyle {
+    width: 70%;
+    margin-top: 1.5%;
+  }
 
-    .background-buttons {
-        flex-direction: row;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
+  .background-buttons {
+    flex-direction: row;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
 
-    .background-button {
-        width: 60%;
-        padding: 5px 5px 5px 5px;
-        font-size: 16px;
-    }
+  .background-button {
+    width: 60%;
+    padding: 5px 5px 5px 5px;
+    font-size: 16px;
+  }
 
-    .background-title {
-        font-size: 36px;
-    }
+  .background-title {
+    font-size: 36px;
+  }
 
-    .taglin {
-        font-size: 20px;
-    }
+  .taglin {
+    font-size: 20px;
+  }
 
-    .novelties-title {
-        font-size: 22px;
-    }
+  .novelties-title {
+    font-size: 22px;
+  }
 
-    .bookStyle {
-        width: 90%;
-    }
+  .bookStyle {
+    width: 90%;
+  }
 
-    .addModalContent {
-        width: 90%;
-    }
+  .addModalContent {
+    width: 90%;
+  }
 
-    .inputStyle {
-        width: 100%;
-        font-size: 16px;
-    }
+  .inputStyle {
+    width: 100%;
+    font-size: 16px;
+  }
 
-    .background-buttons-navigation {
-        width: 90%;
-    }
-    
-    .textModalContent {
-        font-size: 20px;
-    }
+  .background-buttons-navigation {
+    width: 90%;
+  }
 
-    .background-button-navigation {
-        margin-left: 1%;
-        padding: 5px 5px 5px 5px;
-        font-size: 14px;
-    }
+  .textModalContent {
+    font-size: 20px;
+  }
 
+  .background-button-navigation {
+    margin-left: 1%;
+    padding: 5px 5px 5px 5px;
+    font-size: 14px;
+  }
 }
